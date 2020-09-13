@@ -42,9 +42,78 @@ const apartmentBuilding = [
     {names: ["tim", "tom", "billy", "bob"]}
 ];
 
-
 //how to find bob
 console.log(apartmentBuilding[1].names[3])
 
 
+// ANOTHER WAY
+const apartmentBuilding = [
+    {floor:30, complaints:"no"},
+    ["tim", "tom", "billy", "bob"]
+];
 
+//how to find bob this way
+apartmentBuilding[1][3];
+
+
+
+//              Combine objects, arrays, and functions more than one level deep
+
+//Create a function knit that returns an object that has the following kinds of properties item: scarf, size : 6ft etc. Log a value of that object (hint: call the function and then call a property on the return value).
+
+// const knit = ()=>{
+//     if (item==="scarf"){
+//         while(size=6){
+//             return object;
+//         }
+//     } 
+// }
+
+//not sure if that works...I think we need a for loop
+
+let objectList = [
+    { object: "clothing", item: "scarf", size: 6 },
+    { object: "shoes", item: "heels", size: 5 },
+    { object: "accesories", item: "necklace", size: 4 },
+  ];
+
+const knit = ()=> {
+    for (let i = 0; i < objectList.length; i++) {
+        if (objectList[i].size === 6 && objectList[i].item === "scarf") {
+        console.log(objectList[i]);
+        }
+    }
+    }
+       
+
+console.log(knit())
+    
+// I really hope that is correct, because that took me two hours :)
+
+
+
+//Create a function crayonSelector that returns an object that has an array (you can reuse your crayonBox object). Log one of the elements of that array.
+
+const crayonBox = {
+    names: ["Brick Red", "Chestnut", "Sunset Orange", "Tangerine"],
+  };
+  
+  const crayonSelector = () => {
+    return {
+      crayonBox,
+    };
+  };
+  
+  //how to find brick red
+  crayonSelector().crayonBox.names[0];
+  
+
+  //Create a function powerButton that returns a function called options - options should console.log a simple message like select a song. Call that inner function
+
+  const powerButton = ()=> {
+    return options = () => {
+        console.log("don't cry for me argentina")
+    }
+  };
+
+  powerButton()();
