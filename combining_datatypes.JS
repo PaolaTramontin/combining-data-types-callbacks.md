@@ -91,6 +91,17 @@ console.log(knit())
 // I really hope that is correct, because that took me two hours :)
 
 
+//actually I went back and reviewed the notes. Another way to do this would be:
+
+const knit = ()=>{
+    return {
+        object:{item:"scarf", size:6}
+    }
+};
+
+knit().object;
+
+
 
 //Create a function crayonSelector that returns an object that has an array (you can reuse your crayonBox object). Log one of the elements of that array.
 
@@ -108,6 +119,10 @@ const crayonBox = {
   crayonSelector().crayonBox.names[0];
   
 
+
+
+
+
   //Create a function powerButton that returns a function called options - options should console.log a simple message like select a song. Call that inner function
 
   const powerButton = ()=> {
@@ -117,3 +132,127 @@ const crayonBox = {
   };
 
   powerButton()();
+
+
+  //                   Model a Vending Machine Model a vending machine
+
+
+//Make an array of snacks (make 3 snacks). snacks are objects that have a name and a price
+ 
+const vendingMachine = {
+    snacks:[{name:"doritos", price:1}, {name:"ice cream", price:3}, {name:"m&Ms", price:2}]
+  }
+
+
+//   a vending machine has a function vend that allows user to enter the array position (a number) of the snack and then that snack will be returned 
+
+  const vend = ()=>{
+    return {
+        vendingMachine
+    }
+};
+
+
+//hmmm I am craving ice cream!! 
+vend().vendingMachine.snacks[1];
+
+
+
+//                   CALLBACKS
+
+
+//Make a function add that takes two arguments (numbers) and sums them together
+const numSum = (num1, num2 ) => {
+    return num1+num2;
+}
+
+numSum(1,2);
+
+//Make a function subtract that takes two arguments (numbers) and subtracts them
+
+const subtract = (num1, num2) => {
+    return num1 - num2;
+}
+
+subtract(10,8)
+
+//Make a function multiply that takes two arguments and multiplies them
+
+const multiply = (num1, num2) => {
+    return num1 * num2;
+}
+
+multiply(5,5)
+
+
+//Make a function divide that takes two arguments and divides them
+
+const divide = (num1, num2) => {
+    return num1 / num2 ;
+}
+
+divide(10,2)
+
+
+
+//Make a function calculate that takes three arguments. Assume the two arguments are a number ie num1, num2 and a function called operates (a callback). Make it so that when calculate is invoked, the callback "operates" on the numbers and returns the value.
+//Call calculate 4 times, each time using one of the operation functions you wrote
+
+const calculate = (num1,num2, operates) => {
+    return operates()(num1,num2);
+}
+console.log(calculate(1,1,sum));
+console.log(calculate(2,2,multiply));
+console.log(calculate(10,2,divide));
+console.log(calculate(4,1,subtract));
+
+
+//Clean up this code, so that it works and has function definitions in the correct place
+
+//before
+
+bar();
+const bar = () => {
+    console.log('bar here');
+}
+foo();
+
+const foo = () => {
+    console.log('foo here');
+}
+
+//after 
+
+const bar = () => {
+    console.log('bar here');
+}
+bar();
+
+const foo = () => {
+    console.log('foo here');
+}
+foo();
+
+
+
+
+//What is meant by the error(s) this produces?
+
+//before
+foo();
+
+const foo = ()=>{
+    console.log('hi');
+}
+
+
+//After
+
+
+const foo =  ()=>{
+    console.log('hi');
+}
+
+foo();
+
+//there are a couple things that are causing an error, the main one is that foo doesnt have an = sign next to it. Therefore const foo isnt defined. Also, foo (); is being invoked before the function. Therefore, when the computer runs it, foo is being invokved beefore it has a value.
